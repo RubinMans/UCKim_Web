@@ -1,0 +1,90 @@
+/* ========== PAGE ACCUEIL ========== */
+#page-accueil{padding:0;overflow:hidden;}
+.hero{
+  height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;text-align:center;padding:40px 20px;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(74,184,255,.06) 0%,transparent 70%),
+             radial-gradient(ellipse 40% 30% at 20% 70%,rgba(245,194,0,.04) 0%,transparent 60%);
+}
+.hero-inner{position:relative;z-index:1;}
+.hero-logo{
+  width:100px;height:100px;border-radius:50%;
+  border:2px solid rgba(74,184,255,.3);
+  box-shadow:0 0 40px rgba(74,184,255,.2),0 0 80px rgba(74,184,255,.08);
+  animation:logoGlow 3s ease-in-out infinite alternate;
+  margin:0 auto 28px;display:block;object-fit:contain;
+}
+@keyframes logoGlow{
+  from{box-shadow:0 0 30px rgba(74,184,255,.15),0 0 60px rgba(74,184,255,.06);}
+  to{box-shadow:0 0 50px rgba(74,184,255,.35),0 0 100px rgba(74,184,255,.12);}
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(245,194,0,.08);border:1px solid rgba(245,194,0,.3);
+  border-radius:20px;padding:4px 14px;font-size:9px;color:var(--gold);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;
+  animation:fadeDown .8s ease .2s both;
+}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{
+  font-family:'Cinzel',serif;font-size:clamp(24px,5vw,54px);font-weight:900;
+  color:#fff;line-height:1.1;margin-bottom:8px;
+  animation:fadeDown .8s ease .4s both;
+  text-shadow:0 0 40px rgba(74,184,255,.3);
+}
+.hero h1 span{color:var(--p);}
+.hero-sub{
+  font-family:'Cinzel',serif;font-size:clamp(11px,1.5vw,16px);
+  color:var(--gold);letter-spacing:4px;text-transform:uppercase;
+  margin-bottom:16px;animation:fadeDown .8s ease .5s both;
+}
+.hero-devise{
+  font-size:13px;color:var(--muted);font-style:italic;
+  margin-bottom:36px;animation:fadeDown .8s ease .6s both;
+}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeDown .8s ease .7s both;}
+.cta-card{
+  background:var(--card);border:1px solid var(--brd);border-radius:12px;
+  padding:20px 28px;cursor:pointer;transition:all .3s;text-align:center;
+  min-width:160px;position:relative;overflow:hidden;
+}
+.cta-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,transparent,rgba(74,184,255,.04));
+  opacity:0;transition:.3s;
+}
+.cta-card:hover{border-color:rgba(74,184,255,.4);transform:translateY(-4px);box-shadow:0 8px 30px rgba(74,184,255,.1);}
+.cta-card:hover::before{opacity:1;}
+.cta-card.gold:hover{border-color:rgba(245,194,0,.4);box-shadow:0 8px 30px rgba(245,194,0,.1);}
+.cta-card.green:hover{border-color:rgba(0,230,118,.4);box-shadow:0 8px 30px rgba(0,230,118,.1);}
+.cta-card.accent:hover{border-color:rgba(255,107,53,.4);box-shadow:0 8px 30px rgba(255,107,53,.1);}
+.cta-icon{font-size:28px;margin-bottom:8px;display:block;}
+.cta-title{font-family:'Cinzel',serif;font-size:11px;font-weight:600;color:var(--txt);letter-spacing:1px;}
+.cta-sub{font-size:9px;color:var(--muted);margin-top:4px;}
+
+.hero-stats{
+  display:flex;gap:24px;justify-content:center;margin-top:36px;
+  flex-wrap:wrap;animation:fadeDown .8s ease .9s both;
+}
+.hstat{text-align:center;}
+.hstat-val{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;color:var(--p);}
+.hstat-lbl{font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+
+/* Ticker info */
+.info-ticker{
+  position:absolute;bottom:0;left:0;right:0;
+  background:rgba(74,184,255,.05);border-top:1px solid var(--brd);
+  padding:8px 24px;display:flex;align-items:center;gap:16px;
+  font-size:10px;color:var(--muted);overflow:hidden;
+}
+.ticker-label{color:var(--gold);font-weight:700;font-size:9px;letter-spacing:1px;white-space:nowrap;}
+.ticker-scroll{flex:1;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-block;animation:tickerMove 30s linear infinite;}
+@keyframes tickerMove{from{transform:translateX(100%)}to{transform:translateX(-100%)};}
+
+@media(max-width:768px){
+  .hero h1{font-size:28px;}
+}

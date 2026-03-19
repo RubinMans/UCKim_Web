@@ -1,0 +1,243 @@
+/* ========== PAGE FACULTÉS ========== */
+.domaine-card {
+  background: var(--card);
+  border: 1px solid var(--brd);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+
+.domaine-card:hover {
+  border-color: rgba(74, 184, 255, .25);
+}
+
+.domaine-hdr {
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background .2s;
+}
+
+.domaine-hdr:hover {
+  background: rgba(74, 184, 255, .04);
+}
+
+.domaine-emoji {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.domaine-info {
+  flex: 1;
+}
+
+.domaine-info h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  color: var(--txt);
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.domaine-info p {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.domaine-code {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  background: rgba(74, 184, 255, .1);
+  color: var(--p);
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.domaine-chev {
+  margin-left: auto;
+  color: var(--muted);
+  transition: transform .3s;
+  font-size: 18px;
+}
+
+.domaine-hdr.open .domaine-chev {
+  transform: rotate(180deg);
+}
+
+.domaine-body {
+  display: none;
+  border-top: 1px solid var(--brd);
+  padding: 0 22px 20px;
+}
+
+.domaine-body.open {
+  display: block;
+}
+
+.filiere-item {
+  margin-top: 14px;
+  background: var(--panel);
+  border: 1px solid var(--brd);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.filiere-hdr {
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background .2s;
+}
+
+.filiere-hdr:hover {
+  background: rgba(74, 184, 255, .05);
+}
+
+.filiere-hdr h3 {
+  font-size: 12px;
+  color: var(--p);
+  font-weight: 600;
+  flex: 1;
+}
+
+.filiere-code-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  background: rgba(74, 184, 255, .08);
+  border: 1px solid rgba(74, 184, 255, .15);
+  color: var(--p);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.filiere-chev {
+  color: var(--muted);
+  transition: transform .25s;
+  font-size: 14px;
+}
+
+.filiere-hdr.open .filiere-chev {
+  transform: rotate(180deg);
+}
+
+.filiere-body {
+  display: none;
+  padding: 12px 16px;
+  border-top: 1px solid var(--brd);
+}
+
+.filiere-body.open {
+  display: block;
+}
+
+.parcours-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.parcours-tag {
+  background: rgba(245, 194, 0, .08);
+  border: 1px solid rgba(245, 194, 0, .2);
+  color: var(--gold);
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.niveau-badges {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.niv-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.niv-licence {
+  background: rgba(74, 184, 255, .1);
+  border: 1px solid rgba(74, 184, 255, .25);
+  color: var(--p);
+}
+
+.niv-master {
+  background: rgba(245, 194, 0, .1);
+  border: 1px solid rgba(245, 194, 0, .25);
+  color: var(--gold);
+}
+
+.niv-doctorat {
+  background: rgba(0, 230, 118, .1);
+  border: 1px solid rgba(0, 230, 118, .25);
+  color: var(--green);
+}
+
+.niv-badge:hover {
+  transform: translateY(-2px);
+}
+
+/* ========== INFO LMD & INTRO ========== */
+.page-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  color: var(--p);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.page-description {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.lmd-info {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--brd);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.lmd-info h3 {
+  color: var(--p);
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.lmd-info p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.lmd-info ul {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.lmd-info li {
+  margin-bottom: 8px;
+}

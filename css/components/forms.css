@@ -1,0 +1,12 @@
+/* ========== FORMS ========== */
+.fg{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;}
+.fg label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+.fg input,.fg select,.fg textarea{
+  background:var(--bg);border:1px solid var(--brd);border-radius:6px;
+  color:var(--txt);padding:9px 12px;font-size:12px;font-family:'Exo 2',sans-serif;
+  outline:none;transition:border-color .2s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--p);}
+.fg select option{background:#06101e;color:var(--txt);}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fgrid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}

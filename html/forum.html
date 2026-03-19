@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum & Assistant IA — UCKIM</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/badges.css">
+    <link rel="stylesheet" href="../css/pages/forum.css">
+</head>
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- <img src="../assets/images/logo_uckim.png" alt="UCKIM Logo"> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="UCKIM Logo">
+            <div class="topbar-t">
+                <h1>U.C.KIM</h1>
+                <p>Université Catholique de Kimwenza</p>
+            </div>
+            
+            <div class="nav-pills">
+                <a href="index.html" class="npill">Accueil <span class="notif-dot"></span></a>
+                <a href="facultes.html" class="npill">Facultés & LMD</a>
+                <a href="forum.html" class="npill on">Forum IA</a>
+                <a href="inscription.html" class="npill">Inscription</a>
+                <a href="lernen.html" class="npill">E-Learning</a>
+                <a href="portail-etudiant.html" class="npill np-student">Portail Étudiant</a>
+                <a href="portail-enseignant.html" class="npill np-teacher">Portail Enseignant</a>
+                <a href="portail-admin.html" class="npill np-admin">Portail Admin</a>
+            </div>
+        </div>
+
+        <!-- MAIN PAGES CONTAINER -->
+        <div class="pages">
+            <!-- FORUM & ASSISTANT IA -->
+            <div id="page-forum" class="page on" style="padding:0">
+                <div class="forum-layout">
+                    <!-- Sidebar -->
+                    <div class="forum-sidebar">
+                        <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--p);margin-bottom:12px;letter-spacing:1px;">Salons</div>
+                        <div class="channels">
+                            <div class="ch on"># assistant-ia <span class="unread">New</span></div>
+                            <div class="ch"># annonces-officielles</div>
+                            <div class="ch"># l2-informatique</div>
+                            <div class="ch"># entraide-maths</div>
+                            <div class="ch"># club-robotique</div>
+                            <div class="ch"># vie-estudiantine</div>
+                        </div>
+                        
+                        <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--gold);margin-top:24px;margin-bottom:12px;letter-spacing:1px;">En ligne (342)</div>
+                        <div class="channels">
+                            <div class="ch">🟢 Prof. Mukendi (Doyen)</div>
+                            <div class="ch">🟢 Bot UCKim</div>
+                            <div class="ch">🟠 Alice L2 Info</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main -->
+                    <div class="forum-main">
+                        <div style="padding:16px;border-bottom:1px solid var(--brd);background:rgba(2,8,16,.9);">
+                            <h2 style="font-family:'Cinzel',serif;font-size:14px;color:var(--p);"># assistant-ia</h2>
+                            <p style="font-size:10px;color:var(--muted);margin-top:2px;">Pose tes questions à l'IA de l'université ou discute avec la communauté.</p>
+                        </div>
+                        
+                        <div class="forum-messages" id="forumMsgs">
+                            <!-- Msg Système -->
+                            <div style="text-align:center;margin:10px 0 20px;">
+                                <span style="font-size:9px;color:var(--muted);background:var(--panel);padding:4px 12px;border-radius:12px;">Aujourd'hui</span>
+                            </div>
+                            
+                            <!-- Msg IA -->
+                            <div class="fmsg">
+                                <div class="fmsg-av ai">🤖</div>
+                                <div class="fmsg-body">
+                                    <div class="name"><strong>Bot UCKim</strong> · IA Officielle</div>
+                                    <div class="text">Bonjour ! Je suis l'assistant IA de l'UCKIM. Je peux t'aider à trouver ton horaire, comprendre le système LMD, ou te guider pour l'inscription. Comment puis-je t'aider ?</div>
+                                </div>
+                            </div>
+                            
+                            <div class="fmsg user">
+                                <div class="fmsg-av user">EL</div>
+                                <div class="fmsg-body">
+                                    <div class="name"><strong>Elikia M.</strong> · L1 Droit</div>
+                                    <div class="text">Quelles sont les conditions pour passer en L2 avec des dettes ?</div>
+                                </div>
+                            </div>
+                            
+                            <div class="fmsg">
+                                <div class="fmsg-av ai">🤖</div>
+                                <div class="fmsg-body">
+                                    <div class="name"><strong>Bot UCKim</strong> · IA Officielle</div>
+                                    <div class="text">Salut Elikia ! Selon le règlement LMD de l'UCKIM, tu peux passer en L2 si tu valides au moins 45 crédits sur 60 (soit 75% des crédits de L1). Les 15 crédits restants (maximum 3 UE) seront considérés comme des <strong>dettes</strong> que tu devras obligatoirement valider l'année suivante. Attention, une note inférieure à 5/20 dans une UE majeure bloque le passage.</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="forum-input-area">
+                            <div class="forum-input-wrap">
+                                <textarea id="forumInput" rows="1" placeholder="Envoyer un message au #assistant-ia... (@Bot pour l'IA)"></textarea>
+                                <button class="send-btn" onclick="sendForumMsg()">➤</button>
+                            </div>
+                            <div style="font-size:9px;color:var(--muted);margin-top:6px;text-align:right;">Appuyez sur Entrée pour envoyer (Maj+Entrée pour saut de ligne)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/pages/forum.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

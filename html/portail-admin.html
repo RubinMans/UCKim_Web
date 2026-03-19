@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Admin — UCKIM</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/tables.css">
+    <link rel="stylesheet" href="../css/components/badges.css">
+    <link rel="stylesheet" href="../css/pages/portals.css">
+    <link rel="stylesheet" href="../css/pages/admin-ia.css">
+</head>
+
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- <img src="../assets/images/logo_uckim.png" alt="UCKIM Logo"> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+                alt="UCKIM Logo">
+            <div class="topbar-t">
+                <h1>U.C.KIM</h1>
+                <p>Université Catholique de Kimwenza</p>
+            </div>
+
+            <div class="nav-pills">
+                <a href="index.html" class="npill">Accueil <span class="notif-dot"></span></a>
+                <a href="facultes.html" class="npill">Facultés & LMD</a>
+                <a href="forum.html" class="npill">Forum IA</a>
+                <a href="inscription.html" class="npill">Inscription</a>
+                <a href="lernen.html" class="npill">E-Learning</a>
+                <a href="portail-etudiant.html" class="npill np-student">Portail Étudiant</a>
+                <a href="portail-enseignant.html" class="npill np-teacher">Portail Enseignant</a>
+                <a href="portail-admin.html" class="npill np-admin on">Portail Admin</a>
+            </div>
+        </div>
+
+        <!-- MAIN PAGES CONTAINER -->
+        <div class="pages">
+            <!-- PORTAIL ADMIN (Connexion) -->
+            <div id="page-login-admin" class="page on">
+                <div class="login-card admin">
+                    <div class="login-avatar admin">🛡️</div>
+                    <h2>Administration UCKIM</h2>
+                    <div class="login-sub">Système de Gestion Universitaire Global</div>
+
+                    <div class="fg"><label>Identifiant Administrateur</label><input type="text"
+                            placeholder="Ex: ADMIN-DIR-01"></div>
+                    <div class="fg"><label>Mot de passe</label><input type="password" placeholder="••••••••"></div>
+                    <div class="fg"><label>Clé 2FA (Application Authenticator)</label><input type="text"
+                            placeholder="123 456"></div>
+                    <div style="margin-top:24px;">
+                        <button class="btn btn-gold" style="width:100%" onclick="loginAdmin()">Connexion
+                            Sécurisée</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PORTAIL ADMIN (Dashboard) -->
+            <div id="page-portail-admin" class="page" style="padding:0">
+                <div class="admin-portal-layout">
+                    <!-- Sidebar -->
+                    <div class="admin-sidebar">
+                        <div style="text-align:center;margin-bottom:20px;">
+                            <div
+                                style="width:60px;height:60px;background:rgba(245,194,0,.1);border:2px solid rgba(245,194,0,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 10px;">
+                                🛡️</div>
+                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--txt);">Direction
+                                Académique</div>
+                            <div style="font-size:9px;color:var(--muted);font-family:'Space Mono';">NIVEAU D'ACCÈS :
+                                TOTAL</div>
+                        </div>
+
+                        <div class="admin-nav-item on" onclick="aNav('a-dash',this)"><span>📊</span> Vue d'ensemble
+                        </div>
+                        <div class="admin-nav-item" onclick="aNav('a-ia',this)"><span style="color:var(--p)">🤖</span>
+                            Assistant IA Direction</div>
+                        <div class="admin-nav-item" onclick="aNav('a-users',this)"><span>👥</span> Gestion Utilisateurs
+                        </div>
+                        <div class="admin-nav-item" onclick="aNav('a-lmd',this)"><span>📚</span> Gestion Programmes LMD
+                        </div>
+                        <div class="admin-nav-item" onclick="aNav('a-fin',this)"><span>💰</span> Finances & Comptabilité
+                        </div>
+
+                        <div style="margin-top:24px;">
+                            <button class="btn btn-ghost btn-sm" style="width:100%"
+                                onclick="location.reload()">Déconnexion</button>
+                        </div>
+                    </div>
+
+                    <!-- Main -->
+                    <div class="admin-main">
+                        <div id="a-dash" class="admin-section on">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--gold);margin-bottom:20px;">
+                                Tableau de Bord Global</h2>
+
+                            <div class="grid3" style="margin-bottom:24px;">
+                                <div class="stat-box">
+                                    <div class="stat-val">3,452</div>
+                                    <div class="stat-lbl">Étudiants Inscrits</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-val">128</div>
+                                    <div class="stat-lbl">Enseignants Actifs</div>
+                                </div>
+                                <div class="stat-box" style="border-color:rgba(0,230,118,.3);">
+                                    <div class="stat-val" style="color:var(--green);">42k $</div>
+                                    <div class="stat-lbl">Recettes (Mois)</div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-hdr"><span>📡</span> ACTIVITÉ RÉCENTE DU SYSTÈME</div>
+                                <div style="font-size:11px;color:var(--txt);margin-bottom:8px;">[IA] Alerte : 15% des
+                                    étudiants de L1 Info (ST) sont en échec grave en Mathématiques. <button
+                                        class="btn btn-ghost btn-sm"
+                                        onclick="aNav('a-ia', document.querySelectorAll('.admin-nav-item')[1]); setIaTask('Analyse les résultats de Mathématiques L1 Info et propose des solutions.');">Demander
+                                        Analyse IA</button></div>
+                                <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">[Finance] Paiement
+                                    validé : 50$ (Matricule: 24-ECO-092) - Via M-Pesa</div>
+                                <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">[Académique] Le Prof.
+                                    Ilunga a validé les cotes de L1 Informatique - Semestre 1.</div>
+                            </div>
+                        </div>
+
+                        <div id="a-ia" class="admin-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--p);margin-bottom:8px;">
+                                Assistant IA Stratégique</h2>
+                            <p style="font-size:11px;color:var(--muted);margin-bottom:16px;">IA connectée à la base de
+                                données de l'université pour analyses, rapports, et aide à la décision.</p>
+
+                            <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+                                <button class="quick-task"
+                                    onclick="setIaTask('Génère un rapport sur les paiements de la faculté des Sciences Économiques.')">📊
+                                    Rapport Finances Éco</button>
+                                <button class="quick-task"
+                                    onclick="setIaTask('Optimise l\'horaire des auditoires pour éviter les conflits le mardi matin.')">📅
+                                    Optimisation Horaire</button>
+                                <button class="quick-task"
+                                    onclick="setIaTask('Quels sont les professeurs ayant le plus haut taux de réussite ?')">📈
+                                    Stats Enseignants</button>
+                                <button class="quick-task"
+                                    onclick="setIaTask('Génère et envoie les bulletins du Semestre 1 aux étudiants en règle.')">📨
+                                    Envoi Bulletins (Batch)</button>
+                            </div>
+
+                            <div class="ia-chat">
+                                <div class="ia-messages" id="iaMsgs">
+                                    <div style="text-align:center;margin:10px 0 20px;">
+                                        <span
+                                            style="font-size:9px;color:var(--muted);background:var(--bg);padding:4px 12px;border-radius:12px;">Session
+                                            Sécurisée — Accès Admin</span>
+                                    </div>
+                                    <div class="ia-imsg ai">
+                                        <div class="ia-av ai">🧠</div>
+                                        <div class="ia-bub">Bonjour Monsieur le Directeur. Je suis prêt à vous assister.
+                                            Toutes mes analyses sont basées sur les données en temps réel de l'UCKIM.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ia-input-wrap">
+                                    <input type="text" id="iaInput"
+                                        placeholder="Demander un rapport, une action, une prédiction... (Ex: 'Quels sont les taux de réussite en L2 Droit ?')">
+                                    <button class="send-btn" onclick="sendIa()">➤</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="a-users" class="admin-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--txt);margin-bottom:20px;">
+                                Gestion Utilisateurs</h2>
+                            <p style="font-size:12px;color:var(--muted);">Interface de gestion des étudiants,
+                                professeurs et staff.</p>
+                        </div>
+
+                        <div id="a-lmd" class="admin-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--txt);margin-bottom:20px;">
+                                Gestion Programmes LMD</h2>
+                            <p style="font-size:12px;color:var(--muted);">Création, modification et validation des
+                                maquettes pédagogiques.</p>
+                        </div>
+
+                        <div id="a-fin" class="admin-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--txt);margin-bottom:20px;">
+                                Finances & Comptabilité</h2>
+                            <p style="font-size:12px;color:var(--muted);">Suivi des paiements, budgets, et intégrations
+                                bancaires.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/pages/admin-ia.js"></script>
+    <script src="../js/pages/portals.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

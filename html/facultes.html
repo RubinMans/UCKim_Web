@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facultés LMD — UCKIM</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/badges.css">
+    <link rel="stylesheet" href="../css/components/modals.css">
+    <link rel="stylesheet" href="../css/pages/facultes.css">
+</head>
+
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- <img src="../assets/images/logo_uckim.png" alt="UCKIM Logo"> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+                alt="UCKIM Logo">
+            <div class="topbar-t">
+                <h1>U.C.KIM</h1>
+                <p>Université Chrétienne de Kimpese</p>
+            </div>
+
+            <div class="nav-pills">
+                <a href="index.html" class="npill">Accueil <span class="notif-dot"></span></a>
+                <a href="facultes.html" class="npill on">Facultés & LMD</a>
+                <a href="forum.html" class="npill">Forum IA</a>
+                <a href="inscription.html" class="npill">Inscription</a>
+                <a href="lernen.html" class="npill">E-Learning</a>
+                <a href="portail-etudiant.html" class="npill np-student">Portail Étudiant</a>
+                <a href="portail-enseignant.html" class="npill np-teacher">Portail Enseignant</a>
+                <a href="portail-admin.html" class="npill np-admin">Portail Admin</a>
+            </div>
+        </div>
+
+        <!-- MAIN PAGES CONTAINER -->
+        <div class="pages">
+            <!-- FACULTÉS & LMD -->
+            <div id="page-facultes" class="page on">
+                <div style="max-width:900px;margin:0 auto;">
+                    <br>
+                    <h2 class="page-subtitle">Domaines & Filières LMD</h2>
+                    <p class="page-description">Offre de formation complète selon le standard LMD (Licence, Master,
+                        Doctorat). Parcourez nos facultés réorganisées par domaines scientifiques.</p>
+
+                    <div class="lmd-info">
+                        <h3>Système LMD & Nomenclature MINESURSI</h3>
+                        <p>
+                            L'Université Chrétienne de Kimpese (U.C.KIM) organise ses enseignements selon la
+                            <strong>Nomenclature officielle du MINESURSI</strong> (Ministère de l'Enseignement
+                            Supérieur, Universitaire, de la Recherche Scientifique et Innovation). Nos offres de
+                            formation s'alignent sur le standard international <strong>LMD</strong>, structuré en trois
+                            cycles :
+                        </p>
+                        <ul>
+                            <li><strong>Licence (L1 - L3) :</strong> 1er Cycle. 3 années d'études après l'obtention du
+                                diplôme d'État (180 crédits).</li>
+                            <li><strong>Master (M1 - M2) :</strong> 2ème Cycle. 2 années de spécialisation approfondie
+                                après la Licence (120 crédits supplémentaires).</li>
+                            <li><strong>Doctorat (D1 - D3) :</strong> 3ème Cycle. 3 années de recherche minimum après le
+                                Master.</li>
+                        </ul>
+                    </div>
+
+                    <div id="domainesContainer">
+                        <!-- Rempli par renderDomaines() dans javascript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Programmes -->
+    <div id="progModal" class="prog-modal-overlay" onclick="closeProgModal(event)">
+        <div class="prog-modal" onclick="event.stopPropagation()">
+            <h2 id="progModalTitle">Programme</h2>
+            <div class="prog-sub" id="progModalSub">Structure LMD</div>
+            <div id="progModalBody">
+                <!-- Rempli dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/data.js"></script>
+    <script src="../js/programmes.js"></script>
+    <script src="../js/pages/facultes.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

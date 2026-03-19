@@ -1,0 +1,75 @@
+/* ========== PAGE PORTAIL ÉTUDIANT ========== */
+.portal-layout{display:grid;grid-template-columns:320px 1fr;gap:0;height:calc(100vh - 100px);}
+.portal-sidebar{
+  background:var(--card);border-right:1px solid var(--brd);
+  padding:24px;display:flex;flex-direction:column;gap:16px;overflow-y:auto;
+}
+.portal-main{overflow-y:auto;padding:24px;}
+.portal-avatar{
+  width:70px;height:70px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(0,230,118,.2),rgba(0,230,118,.05));
+  border:2px solid rgba(0,230,118,.3);display:flex;align-items:center;
+  justify-content:center;font-size:28px;margin:0 auto 12px;
+}
+.portal-user-name{font-family:'Cinzel',serif;font-size:13px;color:var(--green);text-align:center;margin-bottom:4px;}
+.portal-user-id{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);text-align:center;}
+.portal-nav-item{
+  padding:10px 14px;border-radius:6px;cursor:pointer;font-size:12px;
+  transition:all .2s;display:flex;align-items:center;gap:8px;color:var(--muted);
+}
+.portal-nav-item:hover,.portal-nav-item.on{background:rgba(0,230,118,.08);color:var(--green);}
+.portal-section{display:none;}
+.portal-section.on{display:block;}
+
+/* Cotes privées étudiant */
+.cote-card-priv{
+  background:var(--card);border:1px solid var(--brd);border-radius:10px;
+  padding:20px;margin-bottom:14px;transition:all .2s;
+}
+.cote-card-priv:hover{border-color:rgba(74,184,255,.25);}
+.cote-semestre{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);margin-bottom:14px;letter-spacing:1px;}
+
+/* ========== PAGE PORTAIL ENSEIGNANT ========== */
+.teacher-portal-layout{display:grid;grid-template-columns:280px 1fr;gap:0;height:calc(100vh - 100px);}
+.teacher-sidebar{
+  background:var(--card);border-right:1px solid var(--brd);
+  padding:20px;overflow-y:auto;
+}
+.teacher-main{overflow-y:auto;padding:24px;}
+
+/* ========== PAGE PORTAIL ADMIN ========== */
+.admin-portal-layout{display:grid;grid-template-columns:240px 1fr;gap:0;height:calc(100vh - 100px);}
+.admin-sidebar{
+  background:var(--card);border-right:1px solid var(--brd);
+  padding:20px;overflow-y:auto;
+}
+.admin-main{overflow-y:auto;padding:24px;}
+.admin-nav-item{
+  padding:10px 14px;border-radius:6px;cursor:pointer;font-size:12px;
+  transition:all .2s;display:flex;align-items:center;gap:8px;color:var(--muted);
+  margin-bottom:4px;
+}
+.admin-nav-item:hover,.admin-nav-item.on{background:rgba(245,194,0,.08);color:var(--gold);}
+
+/* ========== LOGIN CARD ========== */
+.login-card{
+  max-width:440px;margin:60px auto;background:var(--card);
+  border:1px solid var(--brd);border-radius:16px;padding:36px;
+  box-shadow:0 0 60px rgba(74,184,255,.06);
+}
+.login-card.admin{border-color:rgba(245,194,0,.2);box-shadow:0 0 60px rgba(245,194,0,.06);}
+.login-card.teacher{border-color:rgba(255,107,53,.2);box-shadow:0 0 60px rgba(255,107,53,.06);}
+.login-avatar{
+  width:72px;height:72px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;margin:0 auto 20px;
+}
+.login-avatar.student{background:rgba(0,230,118,.1);border:2px solid rgba(0,230,118,.3);}
+.login-avatar.admin{background:rgba(245,194,0,.1);border:2px solid rgba(245,194,0,.3);}
+.login-avatar.teacher{background:rgba(255,107,53,.1);border:2px solid rgba(255,107,53,.3);}
+.login-card h2{font-family:'Cinzel',serif;font-size:16px;text-align:center;margin-bottom:6px;}
+.login-card .login-sub{font-size:11px;color:var(--muted);text-align:center;margin-bottom:24px;}
+
+@media(max-width:768px){
+  .portal-layout,.teacher-portal-layout,.admin-portal-layout{grid-template-columns:1fr;}
+}

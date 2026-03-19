@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning — UCKIM</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/badges.css">
+    <link rel="stylesheet" href="../css/pages/learn.css">
+</head>
+
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- <img src="../assets/images/logo_uckim.png" alt="UCKIM Logo"> -->
+            <img src="../assets/icons/logo-uckim.png" alt="Logo UCKim">
+            <div class="topbar-t">
+                <h1>U.C.KIM</h1>
+                <p>Université chretienne de Kimpese</p>
+            </div>
+
+            <div class="nav-pills">
+                <a href="index.html" class="npill">Accueil <span class="notif-dot"></span></a>
+                <a href="facultes.html" class="npill">Facultés & LMD</a>
+                <a href="forum.html" class="npill">Forum IA</a>
+                <a href="inscription.html" class="npill">Inscription</a>
+                <a href="lernen.html" class="npill on">E-Learning</a>
+                <a href="portail-etudiant.html" class="npill np-student">Portail Étudiant</a>
+                <a href="portail-enseignant.html" class="npill np-teacher">Portail Enseignant</a>
+                <a href="portail-admin.html" class="npill np-admin">Portail Admin</a>
+            </div>
+        </div>
+
+        <!-- MAIN PAGES CONTAINER -->
+        <div class="pages">
+            <!-- E-LEARNING (Aperçu public) -->
+            <div id="page-lernen" class="page on" style="padding:0">
+                <div style="display:grid;grid-template-columns:300px 1fr;gap:0;height:calc(100vh - 100px);">
+                    <!-- Sidebar -->
+                    <div class="learn-sidebar">
+                        <div
+                            style="font-family:'Cinzel',serif;font-size:11px;color:var(--p);margin-bottom:12px;letter-spacing:1px;">
+                            Catégories de Cours</div>
+
+                        <div class="course-card" onclick="learnNav('lc-info', this)">
+                            <div style="font-size:12px;font-weight:600;color:var(--txt);">Sciences Informatiques</div>
+                            <div style="font-size:9px;color:var(--muted);margin-top:4px;">124 modules disponibles</div>
+                        </div>
+                        <div class="course-card" onclick="learnNav('lc-agro', this)">
+                            <div style="font-size:12px;font-weight:600;color:var(--txt);">Sciences Agronomiques</div>
+                            <div style="font-size:9px;color:var(--muted);margin-top:4px;">85 modules disponibles</div>
+                        </div>
+                        <div class="course-card" onclick="learnNav('lc-eco', this)">
+                            <div style="font-size:12px;font-weight:600;color:var(--txt);">Économie & Gestion</div>
+                            <div style="font-size:9px;color:var(--muted);margin-top:4px;">112 modules disponibles</div>
+                        </div>
+
+                        <div
+                            style="margin-top:20px;padding:12px;background:rgba(245,194,0,.08);border:1px solid rgba(245,194,0,.2);border-radius:8px;">
+                            <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--gold);margin-bottom:6px;">
+                                Accès Complet</div>
+                            <div style="font-size:9px;color:var(--muted);line-height:1.4;">Les étudiants inscrits
+                                accèdent à l'intégralité des contenus (Syllabus PDF, Vidéos, Quiz) via leur Portail.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main -->
+                    <div class="learn-main">
+                        <div id="lc-info" class="learn-section on">
+                            <h2 style="font-family:'Cinzel',serif;font-size:16px;color:var(--p);margin-bottom:4px;">
+                                Cours Populaires - Informatique</h2>
+                            <p style="font-size:11px;color:var(--muted);margin-bottom:20px;">Aperçu des cours du LMD
+                                disponibles sur la plateforme UCKIM.</p>
+
+                            <div
+                                style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;">
+                                <div
+                                    style="background:var(--card);border:1px solid var(--brd);border-radius:10px;overflow:hidden;">
+                                    <div
+                                        style="height:120px;background:linear-gradient(135deg,#0a192f,#112240);position:relative;">
+                                        <div style="position:absolute;bottom:10px;left:10px;"><span
+                                                class="b-blue badge">L1 - Semestre 2</span></div>
+                                    </div>
+                                    <div style="padding:16px;">
+                                        <div
+                                            style="font-family:'Space Mono',monospace;font-size:9px;color:var(--p);margin-bottom:4px;">
+                                            INF-120</div>
+                                        <div style="font-size:13px;font-weight:600;margin-bottom:8px;">Algorithmique et
+                                            Programmation C</div>
+                                        <div style="font-size:10px;color:var(--muted);margin-bottom:12px;">Prof. R.
+                                            Makambo</div>
+                                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                                            <span style="font-size:10px;color:var(--gold);">⭐ 4.8 (120 avis)</span>
+                                            <a href="portail-etudiant.html" style="text-decoration:none;"><button
+                                                    style="background:none;border:1px solid var(--brd);color:var(--p);padding:4px 10px;border-radius:4px;font-size:9px;cursor:pointer;">Suivre</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    style="background:var(--card);border:1px solid var(--brd);border-radius:10px;overflow:hidden;">
+                                    <div
+                                        style="height:120px;background:linear-gradient(135deg,#1c0e08,#361608);position:relative;">
+                                        <div style="position:absolute;bottom:10px;left:10px;"><span
+                                                class="b-orange badge">L3 - Semestre 1</span></div>
+                                    </div>
+                                    <div style="padding:16px;">
+                                        <div
+                                            style="font-family:'Space Mono',monospace;font-size:9px;color:var(--orange);margin-bottom:4px;">
+                                            IA-310</div>
+                                        <div style="font-size:13px;font-weight:600;margin-bottom:8px;">Machine Learning
+                                            Avancé</div>
+                                        <div style="font-size:10px;color:var(--muted);margin-bottom:12px;">Dr. S.
+                                            Kabasele</div>
+                                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                                            <span style="font-size:10px;color:var(--gold);">⭐ 4.9 (85 avis)</span>
+                                            <a href="portail-etudiant.html" style="text-decoration:none;"><button
+                                                    style="background:none;border:1px solid var(--brd);color:var(--p);padding:4px 10px;border-radius:4px;font-size:9px;cursor:pointer;">Suivre</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="lc-agro" class="learn-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:16px;color:var(--p);margin-bottom:4px;">
+                                Cours Populaires - Agronomie</h2>
+                            <p style="font-size:11px;color:var(--muted);margin-bottom:20px;">Sélectionnez une catégorie
+                                à gauche pour voir les modules.</p>
+                        </div>
+                        <div id="lc-eco" class="learn-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:16px;color:var(--p);margin-bottom:4px;">
+                                Cours Populaires - Économie</h2>
+                            <p style="font-size:11px;color:var(--muted);margin-bottom:20px;">Sélectionnez une catégorie
+                                à gauche pour voir les modules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/pages/portals.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

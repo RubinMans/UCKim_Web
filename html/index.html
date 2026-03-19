@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCKIM — Excellence & Innovation</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/pages/home.css">
+</head>
+
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- Remplacer avec le chemin correct vers le logo dans assets/images -->
+            <!-- <img src="../assets/images/logo_uckim.png" alt="UCKIM Logo"> -->
+            <!-- Image placeholder from original file -->
+            <img src="../assets/icons/logo-uckim.png" alt="Logo UCKim">
+            <div class="topbar-t">
+                <h1>U.C.KIm </h1>
+                <p>Université chretienne de Kimpese</p>
+            </div>
+
+            <div class="nav-pills">
+                <a href="index.html" class="npill on">Accueil <span class="notif-dot"></span></a>
+                <a href="facultes.html" class="npill">Facultés & LMD</a>
+                <a href="forum.html" class="npill">Forum IA</a>
+                <a href="inscription.html" class="npill">Inscription</a>
+                <a href="lernen.html" class="npill">E-Learning</a>
+                <a href="portail-etudiant.html" class="npill np-student">Portail Étudiant</a>
+                <a href="portail-enseignant.html" class="npill np-teacher">Portail Enseignant</a>
+                <a href="portail-admin.html" class="npill np-admin">Portail Admin</a>
+            </div>
+        </div>
+
+        <!-- MAIN PAGES CONTAINER -->
+        <div class="pages">
+            <!-- ACCUEIL -->
+            <div id="page-accueil" class="page on">
+                <div class="hero">
+                    <div class="hero-bg"></div>
+                    <div class="hero-inner">
+                        <img src="../assets/icons/logo-uckim.png" alt="Logo UCKim">
+                        <div class="hero-badge">🎓 Rentrée Académique 2024-2025 Ouverte</div>
+                        <h1>Université chretienne de Kimpese</span></h1>
+                        <div class="hero-sub">Foi,Conscience & Inovation</div>
+                        <div class="hero-devise">"Former l'élite de demain avec les technologies d'aujourd'hui"</div>
+
+                        <div class="hero-cta">
+                            <a href="facultes.html" style="text-decoration:none; color:inherit;">
+                                <div class="cta-card">
+                                    <div class="cta-icon">📚</div>
+                                    <div class="cta-title">Explorer le LMD</div>
+                                    <div class="cta-sub">Programmes & Cursus</div>
+                                </div>
+                            </a>
+                            <a href="inscription.html" style="text-decoration:none; color:inherit;">
+                                <div class="cta-card gold">
+                                    <div class="cta-icon">🎓</div>
+                                    <div class="cta-title">S'inscrire</div>
+                                    <div class="cta-sub">Pré-inscription en ligne</div>
+                                </div>
+                            </a>
+                            <a href="portail-etudiant.html" style="text-decoration:none; color:inherit;">
+                                <div class="cta-card green">
+                                    <div class="cta-icon">👨‍🎓</div>
+                                    <div class="cta-title">Portail Étudiant</div>
+                                    <div class="cta-sub">Connexion sécurisée</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="hero-stats">
+                            <div class="hstat">
+                                <div class="hstat-val">5</div>
+                                <div class="hstat-lbl">Domaines RDC</div>
+                            </div>
+                            <div class="hstat">
+                                <div class="hstat-val">3000+</div>
+                                <div class="hstat-lbl">Étudiants</div>
+                            </div>
+                            <div class="hstat">
+                                <div class="hstat-val">100%</div>
+                                <div class="hstat-lbl">Numérisé</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-ticker">
+                        <div class="ticker-label">FLASH INFO ⚡</div>
+                        <div class="ticker-scroll">
+                            <div class="ticker-inner">
+                                · Nouveaux programmes LMD validés par le Ministère de l'ESU · Ouvertures des
+                                inscriptions pour le Master en Cybersécurité · Conférence sur l'IA appliquée à
+                                l'Agriculture ce vendredi · Paiement des frais académiques désormais possible via Mobile
+                                Money ·
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Enseignant — UCKIM</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/tables.css">
+    <link rel="stylesheet" href="../css/components/badges.css">
+    <link rel="stylesheet" href="../css/pages/portals.css">
+    <link rel="stylesheet" href="../css/pages/cotes.css">
+
+    <script src="../js/data.js"></script>
+    <script src="../js/components/grades.js"></script>
+</head>
+
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- <img src="../assets/images/logo_uckim.png" alt="UCKIM Logo"> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+                alt="UCKIM Logo">
+            <div class="topbar-t">
+                <h1>U.C.KIM</h1>
+                <p>Université Catholique de Kimwenza</p>
+            </div>
+
+            <div class="nav-pills">
+                <a href="index.html" class="npill">Accueil <span class="notif-dot"></span></a>
+                <a href="facultes.html" class="npill">Facultés & LMD</a>
+                <a href="forum.html" class="npill">Forum IA</a>
+                <a href="inscription.html" class="npill">Inscription</a>
+                <a href="lernen.html" class="npill">E-Learning</a>
+                <a href="portail-etudiant.html" class="npill np-student">Portail Étudiant</a>
+                <a href="portail-enseignant.html" class="npill np-teacher on">Portail Enseignant</a>
+                <a href="portail-admin.html" class="npill np-admin">Portail Admin</a>
+            </div>
+        </div>
+
+        <!-- MAIN PAGES CONTAINER -->
+        <div class="pages">
+            <!-- PORTAIL ENSEIGNANT (Connexion) -->
+            <div id="page-login-enseignant" class="page on">
+                <div class="login-card teacher">
+                    <div class="login-avatar teacher">👨‍🏫</div>
+                    <h2>Espace Enseignant UCKIM</h2>
+                    <div class="login-sub">Gestion Académique & Évaluation LMD</div>
+
+                    <div class="fg"><label>Identifiant Enseignant</label><input type="text"
+                            placeholder="Ex: PROF-INFO-04"></div>
+                    <div class="fg"><label>Mot de passe</label><input type="password" placeholder="••••••••"></div>
+                    <div style="display:flex;justify-content:space-between;margin-top:24px;align-items:center;">
+                        <span style="font-size:10px;color:rgba(255,107,53,1);cursor:pointer;">Accès biométrique ?</span>
+                        <button class="btn" style="background:linear-gradient(135deg,#ff6b35,#cc4a1b);color:#fff;"
+                            onclick="loginEnseignant()">Connexion</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PORTAIL ENSEIGNANT (Dashboard) -->
+            <div id="page-portail-enseignant" class="page" style="padding:0">
+                <div class="teacher-portal-layout">
+                    <!-- Sidebar -->
+                    <div class="teacher-sidebar">
+                        <div style="text-align:center;margin-bottom:20px;">
+                            <div
+                                style="width:60px;height:60px;background:rgba(255,107,53,.1);border:2px solid rgba(255,107,53,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 10px;">
+                                👨‍🏫</div>
+                            <div style="font-family:'Cinzel',serif;font-size:12px;color:var(--txt);">Prof. K. Ilunga
+                            </div>
+                            <div style="font-size:9px;color:var(--muted);font-family:'Space Mono';">TITULAIRE · SC.
+                                INFORMATIQUES</div>
+                        </div>
+
+                        <div class="teacher-nav-item on" onclick="tNav('t-dash',this)"><span>📊</span> Tableau de bord
+                        </div>
+                        <div class="teacher-nav-item" onclick="tNav('t-cotes',this)"><span>📝</span> Saisie des Cotes
+                            (LMD)</div>
+                        <div class="teacher-nav-item" onclick="tNav('t-cours',this)"><span>📚</span> Mes Cours /
+                            Syllabus</div>
+
+                        <div style="margin-top:24px;">
+                            <button class="btn btn-ghost btn-sm" style="width:100%"
+                                onclick="location.reload()">Déconnexion</button>
+                        </div>
+                    </div>
+
+                    <!-- Main -->
+                    <div class="teacher-main">
+                        <div id="t-dash" class="teacher-section on">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--txt);margin-bottom:20px;">
+                                Espace Professeur</h2>
+                            <p style="font-size:12px;color:var(--muted);margin-bottom:24px;">Bienvenue dans votre espace
+                                de gestion académique.</p>
+
+                            <div class="grid3">
+                                <div class="stat-box" style="border-color:rgba(255,107,53,.3);">
+                                    <div class="stat-val" style="color:var(--accent);">2</div>
+                                    <div class="stat-lbl">Cours Actifs</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-val">84</div>
+                                    <div class="stat-lbl">Étudiants Inscrits</div>
+                                </div>
+                                <div class="stat-box" style="border-color:rgba(0,230,118,.3);">
+                                    <div class="stat-val" style="color:var(--green);">En règle</div>
+                                    <div class="stat-lbl">Dépôts Syllabus</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="t-cotes" class="teacher-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--txt);margin-bottom:8px;">
+                                Saisie & Délibération LMD</h2>
+                            <p style="font-size:11px;color:var(--muted);margin-bottom:20px;">Le système LMD calcule
+                                automatiquement la moyenne pondérée selon les crédits ECTS et génère la décision du
+                                jury.</p>
+
+                            <div class="cotes-layout">
+                                <!-- Colonne Saisie -->
+                                <div>
+                                    <div
+                                        style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                                        <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--p);">
+                                            Étudiant: 24-INF-014 (Elikia M.)</div>
+                                        <select
+                                            style="background:var(--bg);border:1px solid var(--brd);color:var(--txt);padding:4px 8px;font-size:10px;border-radius:4px;">
+                                            <option>Semestre 1 (L1)</option>
+                                            <option>Semestre 2 (L1)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="ue-form">
+                                        <h4>UE1 : Fondamentaux IT (12 crédits)</h4>
+                                        <div
+                                            style="font-size:9px;color:var(--muted);display:grid;grid-template-columns:1fr 80px 60px 30px;gap:6px;margin-bottom:6px;padding-right:4px;">
+                                            <span>Nom de l'EC</span><span>Cote
+                                                /20</span><span>Crédits</span><span></span>
+                                        </div>
+                                        <div id="cotesInputs">
+                                            <div class="ec-row"><input type="text" value="Algorithmique" readonly><input
+                                                    type="number" class="c-val" value="14.5" step="0.1"><input
+                                                    type="number" class="c-cr" value="5" readonly><span
+                                                    style="font-size:12px;color:var(--green);text-align:center;">✓</span>
+                                            </div>
+                                            <div class="ec-row"><input type="text" value="Mathématiques générales"
+                                                    readonly><input type="number" class="c-val" value="09.0"
+                                                    step="0.1"><input type="number" class="c-cr" value="4"
+                                                    readonly><span
+                                                    style="font-size:12px;color:var(--red);text-align:center;">✗</span>
+                                            </div>
+                                            <div class="ec-row"><input type="text" value="Architecture des ordinateurs"
+                                                    readonly><input type="number" class="c-val" value="12.0"
+                                                    step="0.1"><input type="number" class="c-cr" value="3"
+                                                    readonly><span
+                                                    style="font-size:12px;color:var(--gold);text-align:center;">~</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-gold" style="width:100%" onclick="calcSimCotes()">Simuler
+                                        Délibération LMD</button>
+                                </div>
+
+                                <!-- Colonne Résultat -->
+                                <div>
+                                    <div class="result-panel">
+                                        <div
+                                            style="font-family:'Cinzel',serif;font-size:13px;color:var(--gold);margin-bottom:16px;text-align:center;">
+                                            Rapport du Jury LMD</div>
+
+                                        <div
+                                            style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+                                            <span style="font-size:11px;color:var(--muted);">Moyenne Pondérée</span>
+                                            <span
+                                                style="font-family:'Space Mono';font-size:14px;color:var(--p);font-weight:700;"
+                                                id="r-moy">--/20</span>
+                                        </div>
+                                        <div
+                                            style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+                                            <span style="font-size:11px;color:var(--muted);">Mention LMD</span>
+                                            <span class="badge b-gold" id="r-mention">--</span>
+                                        </div>
+                                        <div style="display:flex;justify-content:space-between;padding:10px 0;">
+                                            <span style="font-size:11px;color:var(--muted);">Crédits Acquis</span>
+                                            <span style="font-family:'Space Mono';font-size:12px;color:var(--txt);"
+                                                id="r-cr">--/12</span>
+                                        </div>
+
+                                        <div id="r-delib-box" class="deliberation-result" style="display:none;">
+                                            <div class="delib-icon" id="r-icon"></div>
+                                            <div class="delib-decision" id="r-decision"></div>
+                                            <div class="delib-motif" id="r-motif"></div>
+                                        </div>
+
+                                        <div style="margin-top:20px;text-align:center;">
+                                            <button class="btn btn-green" style="display:none;"
+                                                id="btn-valider-cotes">Valider et Publier ✅</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="t-cours" class="teacher-section">
+                            <h2 style="font-family:'Cinzel',serif;font-size:18px;color:var(--txt);margin-bottom:20px;">
+                                Mes Cours / Syllabus</h2>
+                            <p style="font-size:12px;color:var(--muted);">Espace de téléchargement des supports de cours
+                                pour les étudiants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        function calcSimCotes() {
+            const vals = Array.from(document.querySelectorAll('.c-val')).map(i => parseFloat(i.value) || 0);
+            const crs = Array.from(document.querySelectorAll('.c-cr')).map(i => parseFloat(i.value) || 0);
+            const ues = vals.map((v, i) => ({ moyenne: v, credits: crs[i] }));
+
+            const moy = calculerMoyenneGenerale(ues);
+            const mention = getMention(moy);
+            let crAcquis = 0;
+            ues.forEach(u => { if (u.moyenne >= 10) crAcquis += u.credits; });
+            const totCr = crs.reduce((a, b) => a + b, 0);
+
+            document.getElementById('r-moy').textContent = moy.toFixed(2) + '/20';
+            document.getElementById('r-mention').textContent = mention.code;
+            document.getElementById('r-mention').className = 'badge';
+            document.getElementById('r-mention').style.background = \`\${mention.color}20\`;
+            document.getElementById('r-mention').style.color = mention.color;
+            document.getElementById('r-cr').textContent = \`\${crAcquis}/\${totCr}\`;
+            
+            const delib = deliberer(moy,ues);
+            const box = document.getElementById('r-delib-box');
+            box.style.display = 'block';
+            box.className = 'deliberation-result';
+            document.getElementById('r-decision').textContent = delib.decision;
+            document.getElementById('r-motif').textContent = delib.motif;
+            
+            if(delib.decision==="Admis"){
+                box.classList.add('delib-admis');
+                document.getElementById('r-icon').textContent = "🏆";
+                document.getElementById('r-decision').style.color = "var(--green)";
+            } else if(delib.decision.includes("dette")||delib.decision.includes("compensation")){
+                box.classList.add('delib-dette');
+                document.getElementById('r-icon').textContent = "⚠️";
+                document.getElementById('r-decision').style.color = "var(--orange)";
+            } else {
+                box.classList.add('delib-ajourne');
+                document.getElementById('r-icon').textContent = "❌";
+                document.getElementById('r-decision').style.color = "var(--red)";
+            }
+            document.getElementById('btn-valider-cotes').style.display='inline-block';
+        }
+    </script>
+    <script src="../js/pages/portals.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

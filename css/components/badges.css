@@ -1,0 +1,6 @@
+.badge{padding:2px 8px;border-radius:8px;font-size:9px;font-weight:700;font-family:'Space Mono',monospace;}
+.b-green{background:rgba(0,230,118,.1);color:var(--green);}
+.b-blue{background:rgba(74,184,255,.1);color:var(--p);}
+.b-gold{background:rgba(245,194,0,.1);color:var(--gold);}
+.b-red{background:rgba(255,68,68,.1);color:var(--red);}
+.b-orange{background:rgba(255,152,0,.1);color:var(--orange);}

@@ -1,0 +1,2 @@
+.msg-ok{background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);border-radius:6px;padding:12px;color:var(--green);font-size:12px;margin-bottom:12px;}
+.msg-err{background:rgba(255,68,68,.08);border:1px solid rgba(255,68,68,.2);border-radius:6px;padding:12px;color:var(--red);font-size:12px;margin-bottom:12px;}

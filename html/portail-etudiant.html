@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Étudiant — UCKIM</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/components/cards.css">
+    <link rel="stylesheet" href="../css/components/badges.css">
+    <link rel="stylesheet" href="../css/pages/portals.css">
+</head>
+
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- <img src="Documents\GitHub\UCKim_Site_Web\assets\iconsLogo UCKim.svg" alt="UCKIM Logo"> -->
+            <img src="assets/icons/Logo UCKim.svg" alt="UCKIM Logo">
+            <h1>U.C.KIM</h1>
+            <p>Universite chretienne de kimpese</p>
+
+        </div>
+
+        <div class="nav-pills">
+            <a href="index.html" class="npill">Accueil <span class="notif-dot"></span></a>
+            <a href="facultes.html" class="npill">Facultés & LMD</a>
+            <a href="forum.html" class="npill">Forum IA</a>
+            <a href="inscription.html" class="npill">Inscription</a>
+            <a href="lernen.html" class="npill">E-Learning</a>
+            <a href="portail-etudiant.html" class="npill np-student on">Portail Étudiant</a>
+            <a href="portail-enseignant.html" class="npill np-teacher">Portail Enseignant</a>
+            <a href="portail-admin.html" class="npill np-admin">Portail Admin</a>
+        </div>
+    </div>
+
+    <!-- MAIN PAGES CONTAINER -->
+    <div class="pages">
+        <!-- PORTAIL ÉTUDIANT (Connexion) -->
+        <div id="page-login-etudiant" class="page on">
+            <div class="login-card">
+                <div class="login-avatar student">👨‍🎓</div>
+                <h2>Web Portail Étudiant</h2>
+                <div class="login-sub">Système Académique Intégré LMD</div>
+
+                <div class="fg"><label>Matricule ou Email institutionnel</label><input type="text"
+                        placeholder="Ex: 24-INF-014"></div>
+                <div class="fg"><label>Mot de passe</label><input type="password" placeholder="••••••••"></div>
+                <div style="display:flex;justify-content:space-between;margin-top:24px;align-items:center;">
+                    <span style="font-size:10px;color:var(--p);cursor:pointer;">Mot de passe oublié ?</span>
+                    <button class="btn btn-green" onclick="loginEtudiant()">Connexion</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PORTAIL ÉTUDIANT (Dashboard) -->
+        <div id="page-portail-etudiant" class="page" style="padding:0">
+            <div class="portal-layout">
+                <!-- Sidebar -->
+                <div class="portal-sidebar">
+                    <div>
+                        <div class="portal-avatar">👨‍🎓</div>
+                        <div class="portal-user-name">Elikia M.</div>
+                        <div class="portal-user-id">L1 Informatique · 24-INF-014</div>
+                    </div>
+                    <div style="height:1px;background:var(--brd);margin:10px 0;"></div>
+
+                    <div class="portal-nav-item on" onclick="navPortal('sec-db',this)"><span>📊</span> Dashboard</div>
+                    <div class="portal-nav-item" onclick="navPortal('sec-horaire',this)"><span>📅</span> Horaire & Cours
+                    </div>
+                    <div class="portal-nav-item" onclick="navPortal('sec-cotes',this)"><span>🎓</span> Mes Cotes (LMD)
+                    </div>
+                    <div class="portal-nav-item" onclick="navPortal('sec-finance',this)"><span>💳</span> Finance & Frais
+                    </div>
+
+                    <div style="margin-top:auto">
+                        <button class="btn btn-ghost btn-sm" style="width:100%"
+                            onclick="location.reload()">Déconnexion</button>
+                    </div>
+                </div>
+
+                <!-- Main -->
+                <div class="portal-main">
+                    <div id="sec-db" class="portal-section on">
+                        <h2 style="font-family:'Cinzel',serif;font-size:20px;color:var(--txt);margin-bottom:20px;">Vue
+                            d'ensemble</h2>
+
+                        <div class="grid3" style="margin-bottom:24px;">
+                            <div class="stat-box" style="border-color:rgba(0,230,118,.3);">
+                                <div class="stat-val" style="color:var(--green);">En règle</div>
+                                <div class="stat-lbl">Statut Académique</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-val">30/60</div>
+                                <div class="stat-lbl">Crédits validés (S1)</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-val">120$</div>
+                                <div class="stat-lbl">Solde à payer</div>
+                            </div>
+                        </div>
+
+                        <div class="grid2">
+                            <div class="card">
+                                <div class="card-hdr"><span>📌</span> PROCHAINS COURS (AUJOURD'HUI)</div>
+                                <div
+                                    style="font-size:12px;display:flex;justify-content:space-between;border-bottom:1px solid var(--brd);padding-bottom:10px;margin-bottom:10px;">
+                                    <span>08h00 - 11h00 : Algorithmique (Auditoire A1)</span><span
+                                        class="badge b-blue">Dr. Kabengele</span>
+                                </div>
+                                <div style="font-size:12px;display:flex;justify-content:space-between;">
+                                    <span>11h30 - 14h00 : Mathématiques Appliquées (A2)</span><span
+                                        class="badge b-orange">Prof. Ilunga</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-hdr"><span>📋</span> DERNIÈRES ANNONCES</div>
+                                <div style="font-size:11px;color:var(--muted);margin-bottom:8px;">[Doyen ST] Rattrapage
+                                    de Physique Appliquée ce samedi à 9h00. Présence obligatoire.</div>
+                                <div style="font-size:11px;color:var(--muted);">[Finance] Le délai pour la 2ème tranche
+                                    académique est fixé au 15 Avril 2025.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sec-horaire" class="portal-section">
+                        <h2 style="font-family:'Cinzel',serif;font-size:20px;color:var(--txt);margin-bottom:20px;">
+                            Horaire & Cours</h2>
+                        <p style="font-size:12px;color:var(--muted);">Aucun horaire spécifique programmé cette semaine
+                            en dehors des révisions.</p>
+                    </div>
+
+                    <div id="sec-cotes" class="portal-section">
+                        <h2 style="font-family:'Cinzel',serif;font-size:20px;color:var(--txt);margin-bottom:20px;">
+                            Relevé de Cotes (L1 Info)</h2>
+
+                        <div class="cote-card-priv">
+                            <div class="cote-semestre">Semestre 1 (Validé)</div>
+                            <table style="font-size:11px;">
+                                <tr>
+                                    <th>UE</th>
+                                    <th>Crédits</th>
+                                    <th>Cote /20</th>
+                                    <th>Mention</th>
+                                </tr>
+                                <tr>
+                                    <td>Matières transversales</td>
+                                    <td>7</td>
+                                    <td style="font-family:'Space Mono';color:var(--p)">14.5</td>
+                                    <td><span class="badge b-blue">GD</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Mathématiques générales</td>
+                                    <td>6</td>
+                                    <td style="font-family:'Space Mono';color:var(--p)">13.0</td>
+                                    <td><span class="badge b-gold">DIS</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Informatique et bureautique</td>
+                                    <td>5</td>
+                                    <td style="font-family:'Space Mono';color:var(--p)">16.0</td>
+                                    <td><span class="badge b-green">TGD</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Physique appliquée</td>
+                                    <td>4</td>
+                                    <td style="font-family:'Space Mono';color:var(--p)">11.5</td>
+                                    <td><span class="badge b-orange">SAT</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Système d'exploitation</td>
+                                    <td>4</td>
+                                    <td style="font-family:'Space Mono';color:var(--red)">09.0</td>
+                                    <td><span class="badge b-red">ÉCHEC (Dette)</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Langue et communication</td>
+                                    <td>4</td>
+                                    <td style="font-family:'Space Mono';color:var(--p)">14.0</td>
+                                    <td><span class="badge b-blue">GD</span></td>
+                                </tr>
+                            </table>
+                            <div
+                                style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;background:var(--panel);padding:10px 14px;border-radius:8px;">
+                                <span style="font-size:11px;color:var(--muted);">Crédits validés : 26/30</span>
+                                <span
+                                    style="font-family:'Space Mono';font-size:14px;font-weight:700;color:var(--gold);">Moy:
+                                    13.0/20</span>
+                                <button class="btn btn-sm btn-ghost">Télécharger PDF</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sec-finance" class="portal-section">
+                        <h2 style="font-family:'Cinzel',serif;font-size:20px;color:var(--txt);margin-bottom:20px;">
+                            Finance & Frais</h2>
+                        <p style="font-size:12px;color:var(--muted);">Intégration Mobile Money encours...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/pages/portals.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription — UCKIM</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/components/forms.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/pages/inscription.css">
+</head>
+
+<body>
+
+    <!-- Animation Fond -->
+    <canvas id="cvs"></canvas>
+
+    <div class="app">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <!-- <img src="../assets/images/logo_uckim.png" alt="UCKIM Logo"> -->
+            <img src="../assets/icons/logo-uckim.png" alt="Logo UCKim" width="60" height="50">
+            <div class="topbar-t">
+                <h1>U.C.KIM</h1>
+                <p>Université chretienne de Kimpese</p>
+
+            </div>
+
+            <div class="nav-pills">
+                <a href="index.html" class="npill">Accueil <span class="notif-dot"></span></a>
+                <a href="facultes.html" class="npill">Facultés & LMD</a>
+                <a href="forum.html" class="npill">Forum IA</a>
+                <a href="inscription.html" class="npill on">Inscription</a>
+                <a href="lernen.html" class="npill">E-Learning</a>
+                <a href="portail-etudiant.html" class="npill np-student">Portail Étudiant</a>
+                <a href="portail-enseignant.html" class="npill np-teacher">Portail Enseignant</a>
+                <a href="portail-admin.html" class="npill np-admin">Portail Admin</a>
+            </div>
+        </div>
+
+        <!-- MAIN PAGES CONTAINER -->
+        <div class="pages">
+            <!-- PRÉ-INSCRIPTION -->
+            <div id="page-inscription" class="page on">
+                <div
+                    style="max-width:600px;margin:20px auto;background:var(--card);border:1px solid var(--brd);border-radius:14px;padding:32px;box-shadow:0 0 60px rgba(74,184,255,.05);">
+                    <h2
+                        style="font-family:'Cinzel',serif;font-size:18px;color:var(--gold);text-align:center;margin-bottom:6px;">
+                        Pré-Inscription LMD</h2>
+                    <p style="text-align:center;color:var(--muted);font-size:11px;margin-bottom:24px;">Rejoignez la
+                        première université numérique de la RDC.</p>
+
+                    <div class="insc-prog-bar">
+                        <div class="insc-prog-fill" id="iProg" style="width:33.3%;"></div>
+                    </div>
+
+                    <div class="insc-step on" id="istep1">
+                        <div style="font-size:12px;color:var(--txt);margin-bottom:16px;">1. Informations personnelles
+                        </div>
+                        <div class="fg"><label>Nom complet *</label><input type="text" id="iNom"
+                                placeholder="Nom, Post-nom, Prénom"></div>
+                        <div class="fgrid">
+                            <div class="fg"><label>Email *</label><input type="email" placeholder="adresse@email.com">
+                            </div>
+                            <div class="fg"><label>Téléphone *</label><input type="text" placeholder="+243 ..."></div>
+                        </div>
+                        <div class="fg"><label>Adresse (Ville/Commune)</label><input type="text"
+                                placeholder="Ex: Kinshasa, Mont-Ngafula"></div>
+                        <div style="display:flex;justify-content:flex-end;margin-top:20px;">
+                            <button class="btn btn-gold" onclick="nextInsc(2)">Suivant →</button>
+                        </div>
+                    </div>
+
+                    <div class="insc-step" id="istep2">
+                        <div style="font-size:12px;color:var(--txt);margin-bottom:16px;">2. Études antérieures</div>
+                        <div class="fg"><label>Diplôme d'État (Section/Option)</label><input type="text"
+                                placeholder="Ex: Mathématiques-Physique"></div>
+                        <div class="fgrid">
+                            <div class="fg"><label>Année d'obtention</label><input type="number" placeholder="2023">
+                            </div>
+                            <div class="fg"><label>Pourcentage (%)</label><input type="text" placeholder="Ex: 68%">
+                            </div>
+                        </div>
+                        <div class="fg"><label>École de provenance</label><input type="text"
+                                placeholder="Nom du collège ou complexe scolaire"></div>
+
+                        <div style="display:flex;justify-content:space-between;margin-top:20px;">
+                            <button class="btn btn-ghost" onclick="prevInsc(1)">← Précédent</button>
+                            <button class="btn btn-gold" onclick="nextInsc(3)">Suivant →</button>
+                        </div>
+                    </div>
+
+                    <div class="insc-step" id="istep3">
+                        <div style="font-size:12px;color:var(--txt);margin-bottom:16px;">3. Choix du cursus LMD</div>
+                        <div class="fg">
+                            <label>Curriculum ciblé *</label>
+                            <select id="iChoix">
+                                <option value="0">--- Sélectionnez votre filière ---</option>
+                                <optgroup label="ST - Sciences et Technologies">
+                                    <option value="SI">Licence - Sciences Informatiques</option>
+                                    <option value="ARCH">Licence - Architecture</option>
+                                    <option value="BTP">Licence - BTP</option>
+                                </optgroup>
+                                <optgroup label="SAE - Sc. Agronomiques">
+                                    <option value="AGRO">Licence - Agroforesterie</option>
+                                    <option value="DR">Licence - Développement Rural</option>
+                                </optgroup>
+                                <optgroup label="SEG - Sc. Économiques & Gestion">
+                                    <option value="GEST">Licence - Gestion & Finance</option>
+                                    <option value="ECON">Licence - Économie du Développement</option>
+                                </optgroup>
+                                <optgroup label="SPE - Sc. Psycho. et Édu.">
+                                    <option value="SCED">Licence - Sciences de l'Éducation</option>
+                                    <option value="PSYC">Licence - Psychologie Clinique</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="fg">
+                            <label>Dernier relevé (PDF/Image)</label>
+                            <input type="file" style="padding-top:6px;">
+                        </div>
+
+                        <div
+                            style="background:rgba(245,194,0,.1);border:1px solid rgba(245,194,0,.2);padding:12px;border-radius:6px;margin:16px 0;font-size:10px;color:var(--gold);">
+                            Note : Un acompte des frais d'inscription (10$) sera requis après validation du dossier pour
+                            générer votre accès au Portail Étudiant.
+                        </div>
+
+                        <div style="display:flex;justify-content:space-between;margin-top:20px;">
+                            <button class="btn btn-ghost" onclick="prevInsc(2)">← Précédent</button>
+                            <button class="btn"
+                                style="background:linear-gradient(135deg,var(--green),#00b060);color:#000;"
+                                onclick="finishInsc()">Terminer & Soumettre ✅</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/pages/inscription.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

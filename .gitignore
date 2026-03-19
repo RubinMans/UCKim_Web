@@ -1,0 +1,25 @@
+# Dépendances node (si on utilise npm/yarn plus tard)
+node_modules/
+
+# Fichiers de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers générés par le système (Mac, Windows)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fichiers de l'éditeur de code
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Dossiers de build (si ajoutés plus tard via bundler)
+dist/
+build/

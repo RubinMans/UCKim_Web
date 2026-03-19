@@ -1,0 +1,5 @@
+/* ========== TABLES ========== */
+table{width:100%;border-collapse:collapse;}
+th{padding:9px 12px;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;text-align:left;border-bottom:1px solid var(--brd);}
+td{padding:9px 12px;font-size:12px;border-bottom:1px solid rgba(74,184,255,.04);}
+tr:hover td{background:rgba(74,184,255,.03);}

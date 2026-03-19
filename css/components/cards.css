@@ -1,0 +1,8 @@
+/* ========== CARDS ========== */
+.card{background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:22px;margin-bottom:16px;}
+.card-hdr{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.stat-box{background:var(--panel);border:1px solid var(--brd);border-radius:8px;padding:18px;text-align:center;}
+.stat-val{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;color:var(--p);}
+.stat-lbl{font-size:9px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px;}

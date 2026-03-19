@@ -1,0 +1,8 @@
+/* ========== PALMARES ========== */
+.palmares-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:12px;}
+.palmares-table th{background:rgba(74,184,255,.1);color:var(--p);padding:8px 6px;text-align:left;font-size:10px;letter-spacing:.5px;border-bottom:1px solid var(--brd);}
+.palmares-table td{padding:7px 6px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--txt);}
+.palmares-table .rank{font-family:'Space Mono',monospace;color:var(--gold);font-weight:700;text-align:center;}
+.palmares-table .rank-1{color:#FFD700;}
+.palmares-table .rank-2{color:#C0C0C0;}
+.palmares-table .rank-3{color:#CD7F32;}

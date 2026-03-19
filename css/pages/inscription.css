@@ -1,0 +1,5 @@
+/* ========== INSCRIPTION ========== */
+.insc-prog-bar{height:3px;background:rgba(74,184,255,.1);border-radius:2px;margin-bottom:20px;}
+.insc-prog-fill{height:100%;background:var(--p);border-radius:2px;transition:width .4s;}
+.insc-step{display:none;}
+.insc-step.on{display:block;}
