@@ -21,4 +21,4 @@ This project contains the frontend source code for the UCKIM platform, refactore
 ## Prochaines Étapes
 - Intégrer les assets visuels (images, vidéos, icônes) dans le dossier `assets/`.
 - Déployer l'application.
-- Utiliser avec Stitch pour un design professionnel, avec une inspiration d'université de haut niveau (style "Harvard").
+- Utiliser avec Stitch pour un design professionnel, avec une inspiration d'université de haut niveau.
