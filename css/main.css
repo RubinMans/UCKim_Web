@@ -9,10 +9,8 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--txt);font-family:'Exo 2',sans-serif;}
 #cvs{position:fixed;inset:0;z-index:0;pointer-events:none;}
-
 /* ========== APP SHELL ========== */
 .app{position:relative;z-index:1;display:flex;flex-direction:column;height:100vh;}
-
 /* ========== PAGES ========== */
 .pages{flex:1;overflow:hidden;position:relative;}
 .page{position:absolute;inset:0;overflow-y:auto;padding:24px;display:none;}
